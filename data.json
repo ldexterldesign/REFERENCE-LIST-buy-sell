@@ -29,12 +29,14 @@
                 ]
             }
         },
+        "name": "catawiki",
         "tag": [
             "software",
             "software - ecommerce/marketplace",
             "software - ecommerce/marketplace - auction",
             "software - search (i.e. search 1 engine)"
-        ]
+        ],
+        "url": "http://catawiki.com"
     },
     {
         "areaServed": {
