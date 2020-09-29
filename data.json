@@ -1,0 +1,67 @@
+[
+    {
+        "areaServed": {
+            "address": {
+                "addressCountry": [
+                    "eu"
+                ]
+            }
+        },
+        "category": [
+            {
+                "tag": [
+                    "art",
+                    "clothes",
+                    "electronics",
+                    "food/drink",
+                    "homeware",
+                    "leisure/sport",
+                    "media (e.g. audio, print, video)",
+                    "outdoor"
+                ],
+                "type": "product"
+            }
+        ],
+        "location": {
+            "address": {
+                "addressCountry": [
+                    "nl"
+                ]
+            }
+        },
+        "tag": [
+            "software",
+            "software - ecommerce/marketplace",
+            "software - ecommerce/marketplace - auction",
+            "software - search (i.e. search 1 engine)"
+        ]
+    },
+    {
+        "areaServed": {
+            "address": {
+                "addressCountry": [
+                    "gb"
+                ]
+            }
+        },
+        "category": [
+            {
+                "type": "service"
+            }
+        ],
+        "location": {
+            "address": {
+                "addressCountry": [
+                    "gb"
+                ]
+            }
+        },
+        "name": "freeindex",
+        "tag": [
+            "directory",
+            "software",
+            "software - search"
+        ],
+        "url": "http://freeindex.co.uk"
+    }
+]

@@ -1,0 +1,174 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "alias": {
+        "s": "http://schema.org/"
+    },
+    "properties": {
+        "areaServed": {
+            "properties": {
+                "address": {
+                    "properties": {
+                        "addressCountry": {
+                            "items": {
+                                "description": "Should use two-letter ISO 3166-1 alpha-2 country code",
+                                "s:additionalType": "s:Country",
+                                "s:sameAs": "s:addressCountry",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "s:additionalType": "s:PostalAddress",
+                    "s:sameAs": "s:address",
+                    "type": "object"
+                }
+            },
+            "s:additionalType": "s:Place",
+            "s:sameAs": "s:areaServed",
+            "type": "object"
+        },
+        "category": {
+            "items": {
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": "product"
+                                }
+                            }
+                        },
+                        "then": {
+                            "properties": {
+                                "tag": {
+                                    "items": {
+                                        "enum": [
+                                            "art",
+                                            "clothes",
+                                            "electronics",
+                                            "food/drink",
+                                            "garden",
+                                            "homeware",
+                                            "leisure/sport",
+                                            "media (e.g. audio, print, video)",
+                                            "outdoor",
+                                            "pet",
+                                            "tool"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": "service",
+                                    "description": "Should be used with directory tags"
+                                }
+                            }
+                        },
+                        "then": {
+                            "properties": {
+                                "tag": {
+                                    "items": {
+                                        "$comment": "Until something better is found reference http://freeindex.co.uk/sitemap.htm",
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "product",
+                            "service"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "location": {
+            "properties": {
+                "address": {
+                    "properties": {
+                        "addressCountry": {
+                            "items": {
+                                "description": "Should use two-letter ISO 3166-1 alpha-2 country code",
+                                "s:additionalType": "s:Country",
+                                "s:sameAs": "s:addressCountry",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "addressLocality": {
+                            "items": {
+                                "s:additionalType": "s:Text",
+                                "s:sameAs": "s:addressLocality",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "addressRegion": {
+                            "items": {
+                                "s:additionalType": "s:Text",
+                                "s:sameAs": "s:addressRegion",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "s:additionalType": "s:PostalAddress",
+                    "s:sameAs": "s:address",
+                    "type": "object"
+                }
+            },
+            "s:additionalType": "s:Place",
+            "s:sameAs": "s:location",
+            "type": "object"
+        },
+        "name": {
+            "s:additionalType": "s:Text",
+            "s:sameAs": "s:name",
+            "type": "string"
+        },
+        "tag": {
+            "examples": [
+                "consumer rights",
+                "consumer rights - ethics",
+                "consumer rights - product guide/review",
+                "consumer rights - reporting",
+                "directory",
+                "software",
+                "software - comparison",
+                "software - ecommerce/marketplace",
+                "software - ecommerce/marketplace - auction",
+                "software - ecommerce/marketplace - classified",
+                "software - ecommerce/marketplace - shop/store",
+                "software - forum",
+                "software - list",
+                "software - search (i.e. search 1 engine)",
+                "software - search (i.e. search >1 engine) - meta (i.e. search >1 engine, aggregator)",
+                "software - tracker"
+            ],
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "url": {
+            "s:additionalType": "s:URL",
+            "s:sameAs": "s:url",
+            "type": "string"
+        }
+    }
+}
